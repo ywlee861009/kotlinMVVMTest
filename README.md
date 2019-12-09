@@ -1,1 +1,3 @@
 # kotlinMVVMTest
+
+ViewModel + LiveData + DataBinding
