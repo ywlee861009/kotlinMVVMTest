@@ -7,8 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
-import com.example.kotlin_mvvm_test.databinding.ActivityMainBinding
-import com.example.kotlin_mvvm_test.viewmodel.MainViewModel
 
 abstract class BaseActivity<VB: ViewDataBinding, VM: ViewModel>: AppCompatActivity() {
     protected lateinit var mBinding: VB
@@ -39,7 +37,7 @@ abstract class BaseActivity<VB: ViewDataBinding, VM: ViewModel>: AppCompatActivi
     /**
      * ViewModel 변수 변화 감지
      */
-    protected abstract fun observe()
+    protected abstract fun observeViewModelVariables()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +45,7 @@ abstract class BaseActivity<VB: ViewDataBinding, VM: ViewModel>: AppCompatActivi
 
         initDataBinding()
         initBindingVariables()
-        observe()
+        observeViewModelVariables()
     }
 
 
