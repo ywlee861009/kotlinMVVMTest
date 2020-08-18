@@ -9,29 +9,27 @@ import com.example.kotlin_mvvm_test.R
 import com.example.kotlin_mvvm_test.databinding.ActivityMainBinding
 import com.example.kotlin_mvvm_test.viewmodel.MainViewModel
 
-class MainActivity : BaseActivity() {
-    private lateinit var mBinding: ActivityMainBinding
-    private lateinit var mViewModel: MainViewModel
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
+    }
+
+    override fun getViewModel(): Class<MainViewModel> {
+        return MainViewModel::class.java
+    }
+
+    override fun initBindingVariables() {
+
+    }
+
+    override fun observe() {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-    override fun initView() {
-        mBinding = DataBindingUtil.setContentView(
-            this,
-            R.layout.activity_main
-        )
-        mBinding.lifecycleOwner = this
-    }
-
-    override fun initClass() {
-        mViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        mBinding.viewModel = mViewModel
-    }
-
-    override fun initChildView() {
-        // todo implements
-    }
 
 }

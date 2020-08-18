@@ -3,7 +3,7 @@ package com.example.kotlin_mvvm_test.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel: ViewModel {
+class MainViewModel: BaseViewModel {
     var counter: MutableLiveData<Int> = MutableLiveData()
 
     constructor() {
