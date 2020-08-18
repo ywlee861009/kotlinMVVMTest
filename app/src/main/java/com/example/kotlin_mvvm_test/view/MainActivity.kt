@@ -20,7 +20,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     override fun initBindingVariables() {
-
+        mBinding.viewModel = mViewModel
     }
 
     override fun observe() {
